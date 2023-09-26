@@ -15,5 +15,5 @@ eureka:
   renewalPercentThreshold: 0.85
 
 server:
-  port: 8088
+  port: 17957
 
