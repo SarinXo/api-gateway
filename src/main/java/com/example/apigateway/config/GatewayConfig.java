@@ -1,3 +1,4 @@
+/*
 package com.example.apigateway.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +11,13 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableHystrix
 public class GatewayConfig {
+
+    private final AuthenticationFilter filter;
+
     @Autowired
-    private AuthenticationFilter filter;
+    public GatewayConfig(AuthenticationFilter filter) {
+        this.filter = filter;
+    }
 
     @Bean
     public RouteLocator routes(RouteLocatorBuilder builder) {
@@ -25,3 +31,4 @@ public class GatewayConfig {
                 .build();
     }
 }
+*/

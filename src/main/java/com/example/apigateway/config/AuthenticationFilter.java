@@ -1,3 +1,4 @@
+/*
 package com.example.apigateway.config;
 
 import com.example.apigateway.services.JwtUtils;
@@ -16,10 +17,14 @@ import reactor.core.publisher.Mono;
 @Component
 public class AuthenticationFilter implements GatewayFilter {
 
+    private final RouterValidator validator;
+    private final JwtUtils jwtUtils;
+
     @Autowired
-    private RouterValidator validator;
-    @Autowired
-    private JwtUtils jwtUtils;
+    public AuthenticationFilter(RouterValidator validator, JwtUtils jwtUtils) {
+        this.validator = validator;
+        this.jwtUtils = jwtUtils;
+    }
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
@@ -49,3 +54,4 @@ public class AuthenticationFilter implements GatewayFilter {
         return !request.getHeaders().containsKey("Authorization");
     }
 }
+*/
