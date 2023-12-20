@@ -12,11 +12,6 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8888/eureka/
-  renewalPercentThreshold: 0.85
 
 server:
   port: 8080
-
-jwt:
-  secret: giGacHadsecretSSSgulRankNoThisKeyWasTooSmallAndIaArtificiallyLengthenedIt
-
