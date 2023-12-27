@@ -4,10 +4,14 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: user-service
-          uri: lb://user-service
+        - id: admin-service
+          uri: lb://admin-service/**
           predicates:
-            - Path=/static/**
+            - Path=/static/admin/**
+        - id: user-service
+          uri: lb://user-service/**
+          predicates:
+            - Path=/static/user/**
       discovery:
         locator:
           enabled: true
